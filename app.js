@@ -1,6 +1,6 @@
 'use strict';
 
-const API = "https://filltext.com/?rows=50&fname={firstName}&lname={lastName}&pretty=true&category=[%22category1%22,%22category2%22,%22category3%22]";
+const API = "https://filltext.com/?rows=50&fname={firstName}&lname={lastName}&pretty=true&category=[1,2,3]";
 let cards_Container = document.getElementById("cards_Container");
 
 let myData = [];
@@ -37,7 +37,7 @@ function createCard(data) {
             <h2>${data[i].fname} ${data[i].lname}</h2>
         </div>
         <div class="card-body">
-            <p>${data[i].category}</p>
+            <p>category${data[i].category}</p>
         </div>
     `;
     ulEle.appendChild(card);
@@ -56,9 +56,9 @@ let myCatigoryFilter3 = document.getElementById("category_3")
 let filterState = null;
 
 let filterBtnArr = [
-    {btn:myCatigoryFilter1,cat:"category1"}, 
-    {btn:myCatigoryFilter2,cat:"category2"}, 
-    {btn:myCatigoryFilter3,cat:"category3"}];
+    {btn:myCatigoryFilter1,cat:"1"}, 
+    {btn:myCatigoryFilter2,cat:"2"}, 
+    {btn:myCatigoryFilter3,cat:"3"}];
 
 // add event listener to the filter buttons to show our cards filtered
 for(let i=0;i<filterBtnArr.length;i++){
